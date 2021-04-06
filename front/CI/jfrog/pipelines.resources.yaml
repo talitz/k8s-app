@@ -8,7 +8,7 @@ resources:
         include: ^front\/.+
         exclude: ^front\/CI\/.+
 #        exclude: ^back\/CI\/Docker\/.+
-      gitProvider: hza_github
+      gitProvider: talitzgithub
       path: talitz/k8s-app
       branches:
         include: swampup2020
@@ -22,7 +22,7 @@ resources:
       path: talitz/k8s-app
       branches:
         include: swampup2020
-      gitProvider: hza_github
+      gitProvider: talitzgithub
 
   # Build info for the published Npm App
   - name: FrontAppBuildInfo

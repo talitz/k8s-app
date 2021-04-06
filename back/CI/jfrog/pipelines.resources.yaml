@@ -7,7 +7,7 @@ resources:
       files:
         include: ^back\/.+
         exclude: ^back\/CI\/.+
-      gitProvider: hza_github
+      gitProvider: talitzgithub
       path: talitz/k8s-app
       branches:
         include: swampup2020
@@ -21,7 +21,7 @@ resources:
       path: talitz/k8s-app
       branches:
         include: swampup2020
-      gitProvider: hza_github
+      gitProvider: talitzgithub
 
   # Build info for the published gradle App
   - name: back_appBuildInfo
