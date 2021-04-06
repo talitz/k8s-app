@@ -9,7 +9,7 @@ resources:
         exclude: ^front\/CI\/.+
 #        exclude: ^back\/CI\/Docker\/.+
       gitProvider: hza_github
-      path: HamzaZFrog/k8s-app
+      path: talitz/k8s-app
       branches:
         include: swampup2020
 
@@ -19,7 +19,7 @@ resources:
     configuration:
       files:
         include: ^front\/CI\/Docker\/.+
-      path: HamzaZFrog/k8s-app
+      path: talitz/k8s-app
       branches:
         include: swampup2020
       gitProvider: hza_github
