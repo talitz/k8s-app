@@ -6,6 +6,6 @@ resolver:
   repo: gradle-remote
   serverID: artifactory
 deployer:
-  repo: gradle-demo-dev-local
+  repo: gradle-dev-local
   serverID: artifactory
   deployMavenDescriptors: true
