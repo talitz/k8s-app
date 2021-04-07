@@ -1,0 +1,100 @@
+resources:
+  - name: tutorial_gitRepo_code
+    type: GitRepo
+    configuration:
+      path: roybensh/project-examples
+      gitProvider: roybs_github
+      branches:
+        include: eplus-v2-orbitera
+
+  #-------------------- FileSpecs -----------------------------
+  - name: tutorial_gradle_fileSpec
+    type: FileSpec
+    configuration:
+      sourceArtifactory: artifactory
+      pattern: gradle-demo-dev-local/com/jfrog/frogsws/0.1.0-${run_number}/frogsws-0.1.0-${run_number}.jar
+      target: gradle_results/
+
+  - name: tutorial_npm_fileSpec
+    type: FileSpec
+    configuration:
+      sourceArtifactory: artifactory
+      pattern: npm-demo/frogsui/-/frogsui-1.2.${run_number}.tgz
+      target: npm_results/
+
+  #-------------------- Gradle BuildInfo -----------------------------
+  - name: tutorial_gradleBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_gradle_build
+      buildNumber: ${run_number}
+
+  - name: tutorial_docker_gradleBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_gradle_build
+      buildNumber: ${run_number}
+
+  - name: tutorial_scanned_gradle_dockerBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_gradle_build
+      buildNumber: ${run_number}
+
+  - name: tutorial_final_docker_gradleBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_gradle_build
+      buildNumber: ${run_number}
+
+  #------------------ NPM Build INFO -------------------------
+  - name: tutorial_docker_npmBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_npm_build
+      buildNumber: ${run_number}
+
+  - name: tutorial_scanned_npm_dockerBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_npm_build
+      buildNumber: ${run_number}
+
+  - name: tutorial_final_docker_npmBuild_Info
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artifactory
+      buildName: tutorial_npm_build
+      buildNumber: ${run_number}
+
+  #------------------ Distribution -------------------------
+  - name: tutorial_new_releaseBundle
+    type: ReleaseBundle
+    configuration:
+      sourceDistribution: distribution
+      name: tutorial_new_releaseBundle
+      version: v1.0.0
+      isSigned: false
+
+  - name: tutorial_signed_releaseBundle
+    type: ReleaseBundle
+    configuration:
+      sourceDistribution: distribution
+      name: tutorial_signed_releaseBundle
+      version: v1.0.0
+
+  - name: tutorial_distribution_rule
+    type: DistributionRule
+    configuration:
+      sourceDistribution: distribution
+      serviceName: US-EDGE
+      siteName: "US-EDGE"
+      cityName: "*"
+      countryCodes:
+        - "*"

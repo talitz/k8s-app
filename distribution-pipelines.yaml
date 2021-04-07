@@ -1,0 +1,32 @@
+pipelines:
+  - name: tutorial_distribution
+    steps:
+      - name: create_releaseBundle
+        type: CreateReleaseBundle
+        configuration:
+          releaseBundleName: tutorial_releaseBundle
+          releaseBundleVersion: V1.2.${run_number}
+          dryRun: false
+          sign: true
+          storeAtSourceArtifactory: artifactory
+          inputResources:
+            - name: tutorial_final_docker_gradleBuild_Info
+            - name: tutorial_final_docker_npmBuild_Info
+          outputResources:
+            - name: tutorial_new_releaseBundle
+          description: RB of gradle and npm build
+          releaseNotes:
+            syntax: markdown
+            content: |
+              ## Heading
+                * Bullet
+                * Points
+
+      - name: distribute_releaseBundle
+        type: DistributeReleaseBundle
+        configuration:
+          dryRun: false
+          inputResources:
+            - name: tutorial_new_releaseBundle
+              trigger: true
+            - name: tutorial_distribution_rule
