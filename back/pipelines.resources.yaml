@@ -9,8 +9,6 @@ resources:
         exclude: ^back\/CI\/.+
       gitProvider: talitzgithub
       path: talitz/k8s-app
-      branches:
-        include: swampup2020
 
 # DOCKER PIPELINE
   - name: src_dockerfile_back_app
@@ -19,8 +17,6 @@ resources:
       files:
         include: ^back\/CI\/Docker\/.+
       path: talitz/k8s-app
-      branches:
-        include: swampup2020
       gitProvider: talitzgithub
 
   # Build info for the published gradle App
