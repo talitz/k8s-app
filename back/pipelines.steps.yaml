@@ -89,7 +89,7 @@ pipelines:
             - jfrog rt sp --build=${res_back_appBuildInfo_buildName}/${res_back_appBuildInfo_buildNumber} app-gradle-rc-local/ "app.version=${appVersion}"
             - write_output build_info_back_app_promoted_staging myversion=${appVersion}
 
-  - name: suv_003_backapp_docker_pipeline
+  - name: backapp_docker_pipeline
     steps:
       - name: build_docker_backapp
         type: DockerBuild

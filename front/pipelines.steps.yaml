@@ -118,7 +118,7 @@ pipelines:
             - write_output build_info_frontapp_promoted_staging myversion=${appVersion}
 
 
-  - name: suv_003_frontapp_docker_pipeline
+  - name: frontapp_docker_pipeline
     steps:
       - name: build_docker_frontapp
         type: DockerBuild
