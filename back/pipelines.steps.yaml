@@ -1,5 +1,5 @@
 pipelines:
-  - name: suv_003_back_app_gradle_pipeline
+  - name: back_app_gradle_pipeline
 
     steps:
       - name: build_app_gradle_backend
