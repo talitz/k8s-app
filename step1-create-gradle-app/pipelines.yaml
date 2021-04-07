@@ -18,7 +18,7 @@ pipelines:
                 name: docker.bintray.io/jfrog/pipelines-u18java
                 tag: "8"
           gradleCommand: clean artifactoryPublish -b build.gradle --stacktrace
-          sourceLocation: tutorial/step1-create-gradle-app
+          sourceLocation: k8s-app/step1-create-gradle-app
           configFileLocation: .
           configFileName: jfrog-gradle.yml
           autoPublishBuildInfo: true
