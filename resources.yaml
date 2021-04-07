@@ -2,10 +2,8 @@ resources:
   - name: tutorial_gitRepo_code
     type: GitRepo
     configuration:
-      path: roybensh/project-examples
-      gitProvider: roybs_github
-      branches:
-        include: eplus-v2-orbitera
+      path: talitz/k8s-app
+      gitProvider: talitzgithub
 
   #-------------------- FileSpecs -----------------------------
   - name: tutorial_gradle_fileSpec
