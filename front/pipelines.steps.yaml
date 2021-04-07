@@ -124,8 +124,8 @@ pipelines:
         type: DockerBuild
         configuration:
           affinityGroup: swampupgrp
-          dockerFileName: jfrog-Dockerfile
-          dockerFileLocation: front/CI/Docker/
+          dockerFileName: Dockerfile
+          dockerFileLocation: front/
           dockerImageName: '${ArtIP}/app-docker-virtual/frontapp'
           dockerImageTag: ${appVersion}-${res_src_dockerfile_frontapp_commitSha}
           inputResources:
