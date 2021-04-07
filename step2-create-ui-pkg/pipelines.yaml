@@ -10,7 +10,7 @@ pipelines:
         type: NpmBuild
         configuration:
           npmArgs: --no-progress --no-audit
-          repositoryName: npm-demo
+          repositoryName: npm
           sourceLocation: k8s-app/step2-create-ui-pkg
           integrations:
             - name: artifactory
@@ -81,7 +81,7 @@ pipelines:
       - name: npm_docker_push
         type: DockerPush
         configuration:
-          targetRepository: docker-demo-dev-local
+          targetRepository: docker
           autoPublishBuildInfo: true
           integrations:
             - name: artifactory
@@ -102,7 +102,7 @@ pipelines:
       - name: npm_docker_promote
         type: PromoteBuild
         configuration:
-          targetRepository: docker-demo-prod-local
+          targetRepository: docker-local
           includeDependencies: true
           status: Passed
           comment: Artifact passed Xray Scan
