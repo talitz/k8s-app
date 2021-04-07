@@ -10,8 +10,6 @@ resources:
 #        exclude: ^back\/CI\/Docker\/.+
       gitProvider: talitzgithub
       path: talitz/k8s-app
-      branches:
-        include: swampup2020
 
 # DOCKER PIPELINE
   - name: src_dockerfile_frontapp
@@ -20,8 +18,6 @@ resources:
       files:
         include: ^front\/CI\/Docker\/.+
       path: talitz/k8s-app
-      branches:
-        include: swampup2020
       gitProvider: talitzgithub
 
   # Build info for the published Npm App
